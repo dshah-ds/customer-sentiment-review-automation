@@ -1,0 +1,40 @@
+Reflection — GenAI Case Study: Customer Sentiment & Review Response Automation
+
+This project walked through building a GenAI-powered system to help a customer support team
+understand and respond to product reviews faster, without losing accuracy or consistency.
+
+Milestone 1 showed that star ratings alone are not a reliable signal — nearly half of all reviews
+(45%) showed a mismatch between their star rating and their actual text sentiment, and 78% of
+"neutral" 3-star reviews were actually positive in tone. Sentiment analysis (VADER) and keyword-based
+theme extraction were needed to separate genuine emotional venting from concrete, actionable product
+issues like "defective," "broken," or "refund."
+
+Milestone 2 built on this by segmenting reviews into Positive, Neutral, and Negative groups and
+measuring each one numerically (sentiment score, urgency score, review length, and TF-IDF vocabulary).
+This confirmed the three segments are genuinely distinct customer populations that need different
+treatment — Negative reviews demand fast escalation, Positive reviews are an advocacy opportunity, and
+Neutral reviews are an easily overlooked but real opportunity to convert lukewarm satisfaction into
+loyalty. This step also surfaced how AI-driven segmentation can carry its own biases (e.g., a keyword
+list built from this dataset may not generalize), which is worth auditing regularly rather than trusting
+blindly.
+
+Milestone 3 turned these insights into a working tool: a packaged NLP/sentiment pipeline wired into a
+Gradio app that predicts sentiment and urgency, extracts themes, and drafts a GenAI-generated response
+for a support agent to review. Testing the app across real examples surfaced a genuine limitation — a
+generic keyword ("money") caused a false-positive "Refund Request" theme on a review that was simply
+commenting on value for price, not asking for a refund. This was a valuable, honest reminder of why the
+system is designed as a Human-in-the-Loop assistant rather than a fully automated responder: AI output
+should support an agent's judgment, not replace it.
+
+Overall, the project demonstrated how GenAI can automate sentiment analysis and response generation
+using real product reviews stored in a database. Ensuring safe, policy-aligned responses requires
+careful prompt engineering, transparent handling of known limitations, and consistent human oversight
+at the final step. The system significantly improves customer support efficiency by highlighting urgent
+reviews and generating consistent, reviewable draft replies — while making clear that responsible GenAI
+use means keeping a person in control of what actually reaches the customer.
+
+One additional note for future iterations: this dataset showed signs of being templated/synthetically
+generated (narrow review length distribution, repeated phrasing patterns). The techniques built here —
+sentiment scoring, segmentation, theme extraction, and the Gradio assistant — worked well and are ready
+to apply, but findings and keyword lists should be re-validated against organic, real-world review data
+before being relied on in a live production environment.
