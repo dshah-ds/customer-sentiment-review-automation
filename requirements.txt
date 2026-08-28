@@ -1,0 +1,20 @@
+# Core data handling
+pandas>=2.0.0
+
+# Sentiment analysis (VADER lexicon)
+nltk>=3.8.1
+
+# TF-IDF vectorization + cosine similarity
+scikit-learn>=1.3.0
+
+# Charts
+matplotlib>=3.7.0
+
+# GenAI (Google Gemini) — official SDK, not the deprecated google-generativeai
+google-genai>=0.3.0
+
+# Deployment UI (Milestone 3)
+gradio>=4.0.0
+
+# Only needed if you regenerate the PDF reports locally
+reportlab>=4.0.0
