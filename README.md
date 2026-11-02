@@ -28,7 +28,7 @@ The project runs in three milestones, each building on the last:
 
 ### Key findings
 
-- Star rating alone is a weak signal: 45% of reviews show a mismatch between their star rating and their actual text sentiment, and 78% of "neutral" 3-star reviews are actually positive in tone.
+- Star rating alone is a weak signal: 78% of "neutral" 3-star reviews are actually positive in tone, and 101 of them are negative. Overall, stars and text agree on 55.2% of reviews, but that figure counts every 3-star review as a mismatch (VADER labelled no review as neutral text); for clear 1–2 and 4–5 star ratings, stars and text agree 82.8% of the time.
 - The three rating-based segments are genuinely distinct customer populations (cosine similarity of 0.23–0.27 between all pairs), each needing a different response strategy — fast escalation for Negative, proactive outreach for Neutral, advocacy requests for Positive.
 - Keyword-based theme detection has a real, documented limitation: a generic word ("money") can trigger a false-positive "Refund Request" tag on a review that's simply commenting on value for price — a concrete argument for keeping a human in the loop rather than auto-routing on AI output.
 - This dataset shows signs of being templated/synthetically generated (a narrow review-length distribution, repeated phrasing). The techniques here work well, but findings and keyword lists should be re-validated against organic, real-world review data before being trusted in production.

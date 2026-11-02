@@ -3,9 +3,11 @@ Reflection — GenAI Case Study: Customer Sentiment & Review Response Automation
 This project walked through building a GenAI-powered system to help a customer support team
 understand and respond to product reviews faster, without losing accuracy or consistency.
 
-Milestone 1 showed that star ratings alone are not a reliable signal — nearly half of all reviews
-(45%) showed a mismatch between their star rating and their actual text sentiment, and 78% of
-"neutral" 3-star reviews were actually positive in tone. Sentiment analysis (VADER) and keyword-based
+Milestone 1 showed that star ratings alone are not a reliable signal — 78% of "neutral" 3-star
+reviews were actually positive in tone. Overall, stars and text agreed on only 55.2% of reviews, but
+that headline counts every 3-star review as a mismatch, since VADER labelled no review as neutral
+text; for clear 1–2 and 4–5 star ratings, they agreed 82.8% of the time. The real disagreement lives
+in the middle of the rating scale. Sentiment analysis (VADER) and keyword-based
 theme extraction were needed to separate genuine emotional venting from concrete, actionable product
 issues like "defective," "broken," or "refund."
 
